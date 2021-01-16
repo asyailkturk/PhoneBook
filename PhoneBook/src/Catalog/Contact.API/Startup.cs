@@ -9,8 +9,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using PhoneBook.API.Data;
+using PhoneBook.API.Data.Interfaces;
+using PhoneBook.API.Settings;
 
-namespace Contact.API
+namespace PhoneBook.API
 {
     public class Startup
     {
@@ -25,6 +29,12 @@ namespace Contact.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.Configure<PhoneBookDatabaseSettings>(Configuration.GetSection(nameof(PhoneBookDatabaseSettings)));
+
+            services.AddSingleton<IPhoneBookDatabaseSettings>(sp => sp.GetRequiredService<IOptions<PhoneBookDatabaseSettings>>().Value);
+
+            services.AddTransient<IPhoneBookContext, PhoneBookContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

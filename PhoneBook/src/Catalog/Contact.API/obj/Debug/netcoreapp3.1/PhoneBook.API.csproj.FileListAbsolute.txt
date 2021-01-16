@@ -1,0 +1,5 @@
+E:\Projects\PhoneBook\PhoneBook\src\Catalog\Contact.API\obj\Debug\netcoreapp3.1\PhoneBook.API.csprojAssemblyReference.cache
+E:\Projects\PhoneBook\PhoneBook\src\Catalog\Contact.API\obj\Debug\netcoreapp3.1\PhoneBook.API.csproj.CoreCompileInputs.cache
+E:\Projects\PhoneBook\PhoneBook\src\Catalog\Contact.API\obj\Debug\netcoreapp3.1\PhoneBook.API.MvcApplicationPartsAssemblyInfo.cache
+E:\Projects\PhoneBook\PhoneBook\src\Catalog\Contact.API\obj\Debug\netcoreapp3.1\PhoneBook.API.AssemblyInfoInputs.cache
+E:\Projects\PhoneBook\PhoneBook\src\Catalog\Contact.API\obj\Debug\netcoreapp3.1\PhoneBook.API.AssemblyInfo.cs

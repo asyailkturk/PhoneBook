@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Projects\\PhoneBook\\PhoneBook\\src\\Catalog\\Contact.API\\Contact.API.csproj": {}
+    "E:\\Projects\\PhoneBook\\PhoneBook\\src\\Catalog\\Contact.API\\PhoneBook.API.csproj": {}
   },
   "projects": {
-    "E:\\Projects\\PhoneBook\\PhoneBook\\src\\Catalog\\Contact.API\\Contact.API.csproj": {
+    "E:\\Projects\\PhoneBook\\PhoneBook\\src\\Catalog\\Contact.API\\PhoneBook.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projects\\PhoneBook\\PhoneBook\\src\\Catalog\\Contact.API\\Contact.API.csproj",
-        "projectName": "Contact.API",
-        "projectPath": "E:\\Projects\\PhoneBook\\PhoneBook\\src\\Catalog\\Contact.API\\Contact.API.csproj",
+        "projectUniqueName": "E:\\Projects\\PhoneBook\\PhoneBook\\src\\Catalog\\Contact.API\\PhoneBook.API.csproj",
+        "projectName": "PhoneBook.API",
+        "projectPath": "E:\\Projects\\PhoneBook\\PhoneBook\\src\\Catalog\\Contact.API\\PhoneBook.API.csproj",
         "packagesPath": "C:\\Users\\Asya\\.nuget\\packages\\",
         "outputPath": "E:\\Projects\\PhoneBook\\PhoneBook\\src\\Catalog\\Contact.API\\obj\\",
         "projectStyle": "PackageReference",

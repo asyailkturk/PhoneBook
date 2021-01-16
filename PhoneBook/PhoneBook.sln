@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E8596BF1-E87A-424E-BCB6-F03AB8963C20}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contact", "Contact", "{2E137A80-4E0A-4F63-80DF-65FD02809EE0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PhoneBook", "PhoneBook", "{2E137A80-4E0A-4F63-80DF-65FD02809EE0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contact.API", "src\Catalog\Contact.API\Contact.API.csproj", "{909A2982-770F-4924-9897-D869DC4E7EF7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneBook.API", "src\Catalog\Contact.API\PhoneBook.API.csproj", "{909A2982-770F-4924-9897-D869DC4E7EF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
