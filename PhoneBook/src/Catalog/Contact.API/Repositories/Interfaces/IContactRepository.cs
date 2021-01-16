@@ -24,7 +24,7 @@ namespace PhoneBook.API.Repositories.Interfaces
         Task<IEnumerable<Contact>> GetContacts();
 
         //Rehberdeki bir kişiyle ilgili iletişim bilgilerinin de yer aldığı detay bilgilerin getirilmesi
-        Task<Contact> GetContact(string id);
+        Task<Contact> GetContactById(string id);
 
 
 

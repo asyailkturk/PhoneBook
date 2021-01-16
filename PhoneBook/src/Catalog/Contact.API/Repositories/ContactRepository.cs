@@ -20,7 +20,7 @@ namespace PhoneBook.API.Repositories
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        public async Task<Contact> GetContact(string id)
+        public async Task<Contact> GetContactById(string id)
         {
             return await _context
                            .Contacts
@@ -40,7 +40,7 @@ namespace PhoneBook.API.Repositories
         public async Task AddContactInfo(string id, ContactInfo contactInfo)
         {
 
-            var updateResult =  _context
+            var updateResult = _context
                                   .Contacts
                                   .Find(p => p.Id == id)
                                   .Single();
@@ -50,7 +50,9 @@ namespace PhoneBook.API.Repositories
 
                 updateResult.ContactInfo.Add(contactInfo);
 
-           await _context.Contacts.ReplaceOneAsync(p => p.Id == id, updateResult);
+            await _context.Contacts.ReplaceOneAsync(p => p.Id == id, updateResult);
+
+
         }
 
         public async Task Create(Contact contact)
@@ -66,12 +68,15 @@ namespace PhoneBook.API.Repositories
                                                 .Contacts
                                                 .DeleteOneAsync(filter);
 
+
             return deleteResult.IsAcknowledged
                 && deleteResult.DeletedCount > 0;
+
+           
         }
 
         public async Task DeleteContactInfo(string id, int phoneNumber)
-        {         
+        {
 
             var updateResult = _context
                                   .Contacts
@@ -80,10 +85,12 @@ namespace PhoneBook.API.Repositories
 
             var removingItem = updateResult.ContactInfo.Find(x => x.PhoneNumber == phoneNumber);
 
-            if(removingItem != null)
-               updateResult.ContactInfo.Remove(removingItem);
+            if (removingItem != null)
+                updateResult.ContactInfo.Remove(removingItem);
 
-              await _context.Contacts.ReplaceOneAsync(p => p.Id == id, updateResult);
+            await _context.Contacts.ReplaceOneAsync(p => p.Id == id, updateResult);
+
+
         }
     }
     

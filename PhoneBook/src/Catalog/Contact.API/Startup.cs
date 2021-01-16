@@ -12,6 +12,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using PhoneBook.API.Data;
 using PhoneBook.API.Data.Interfaces;
+using PhoneBook.API.Repositories;
+using PhoneBook.API.Repositories.Interfaces;
 using PhoneBook.API.Settings;
 
 namespace PhoneBook.API
@@ -35,6 +37,7 @@ namespace PhoneBook.API
             services.AddSingleton<IPhoneBookDatabaseSettings>(sp => sp.GetRequiredService<IOptions<PhoneBookDatabaseSettings>>().Value);
 
             services.AddTransient<IPhoneBookContext, PhoneBookContext>();
+            services.AddTransient<IContactRepository, ContactRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
