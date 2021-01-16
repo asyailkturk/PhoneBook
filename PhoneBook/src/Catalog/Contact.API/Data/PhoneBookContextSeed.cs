@@ -3,12 +3,15 @@ using PhoneBook.API.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
 
 namespace PhoneBook.API.Data
 {
     public class PhoneBookContextSeed
     {
+       
+       
 
         public static void SeedData(IMongoCollection<Contact> contactCollection)
         {
@@ -27,7 +30,8 @@ namespace PhoneBook.API.Data
                 {
                     FirstName = "Asya",
                     LastName = "İlktürk",
-                    Company ="Company"
+                    Company ="Company",
+                    
                 },
                 new Contact()
                 {

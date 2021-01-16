@@ -18,12 +18,14 @@ namespace PhoneBook.API.Data
 
             Contacts = database.GetCollection<Contact>(settings.CollectionName);
 
+
             PhoneBookContextSeed.SeedData(Contacts);
 
         }
 
         public IMongoCollection<Contact> Contacts { get; }
 
-        
+
+
     }
 }
