@@ -29,23 +29,23 @@ namespace Report.API.Controllers
             return Ok(reports);
         }
 
-        [Route("[action]/{location}")]
-        [HttpPut]
-        [ProducesResponseType(typeof(ReportContext),(int)HttpStatusCode.OK)]
-        [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        public async Task<ActionResult<ReportContext>> CreateReportByLocation([FromBody]string location)
-        {
-            var reportContext =await _repository.CreateReportByLocation(location);
+        //[Route("[action]/{location}")]
+        //[HttpPut]
+        //[ProducesResponseType(typeof(ReportContext),(int)HttpStatusCode.OK)]
+        //[ProducesResponseType((int)HttpStatusCode.NotFound)]
+        //public async Task<ActionResult<ReportContext>> CreateReportByLocation([FromBody]string location)
+        //{
+        //    var reportContext =await _repository.CreateReportByLocation(location);
 
-            if(reportContext == null)
-            {
-                return NotFound();
-            }
+        //    if(reportContext == null)
+        //    {
+        //        return NotFound();
+        //    }
             
-            return Ok(reportContext);
-        }
+        //    return Ok(reportContext);
+        //}
 
-        [Route("[action]")]
+        //[Route("[action]")]
         [HttpPost]
         public async Task<ActionResult<ReportContext>> GetLocationReport([FromBody] string location)
         {

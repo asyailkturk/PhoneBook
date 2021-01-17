@@ -15,3 +15,8 @@ services:
         build:
             context: .
             dockerfile: src/Report.API/Report.API/Dockerfile
+    ocelotapigateway:
+        image: ${DOCKER_REGISTRY-}ocelotapigateway
+        build:
+            context: .
+            dockerfile: src/APIGateway/OcelotAPIGateway/Dockerfile
