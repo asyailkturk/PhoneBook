@@ -5,9 +5,16 @@ services:
         container_name: phonebookdb
         restart: always
         volumes:
-            - ${WEBAPP_STORAGE_HOME}/site:/data/db
+            - ${WEBAPP_STORAGE_HOME}/site:/data/phonebookdb
         ports:
             - "27017:27017"
+    reportdb:
+        container_name: reportdb
+        restart: always
+        volumes:
+            - ${WEBAPP_STORAGE_HOME}/site:/data/reportdb
+        ports:
+            - "27018:27017"
     phonebook.api:
         environment:
             - ASPNETCORE_ENVIRONMENT=Development
@@ -19,3 +26,15 @@ services:
             - ${HOME}/.aspnet/https:/root/.aspnet/https/
         ports:
             - "8000:80"
+    report.api:
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+            - "ReportDatabaseSettings:ConnectionString=mongodb://reportdb:27018"
+        depends_on:
+            - reportdb
+        volumes:
+            - ${HOME}/.microsoft/usersecrets/:/root/.microsoft/usersecrets
+            - ${HOME}/.aspnet/https:/root/.aspnet/https/
+        ports:
+            - "8001:80"
+

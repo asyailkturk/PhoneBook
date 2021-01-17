@@ -1,0 +1,54 @@
+services:
+  phonebook.api:
+    build:
+      context: E:\Projects\PhoneBook
+      dockerfile: src/PhoneBook.API/Dockerfile
+    depends_on:
+      phonebookdb:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      PhoneBookDatabaseSettings:ConnectionString: mongodb://phonebookdb:27017
+    image: phonebookapi
+    ports:
+    - published: 8000
+      target: 80
+    volumes:
+    - /.aspnet/https:/root/.aspnet/https/:rw
+    - /.microsoft/usersecrets:/root/.microsoft/usersecrets:rw
+  phonebookdb:
+    container_name: phonebookdb
+    image: mongo
+    ports:
+    - published: 27017
+      target: 27017
+    restart: always
+    volumes:
+    - /site:/data/phonebookdb:rw
+  report.api:
+    build:
+      context: E:\Projects\PhoneBook
+      dockerfile: src/Report.API/Report.API/Dockerfile
+    depends_on:
+      reportdb:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ReportDatabaseSettings:ConnectionString: mongodb://reportdb:27018
+    image: reportapi
+    ports:
+    - published: 8001
+      target: 80
+    volumes:
+    - /.aspnet/https:/root/.aspnet/https/:rw
+    - /.microsoft/usersecrets:/root/.microsoft/usersecrets:rw
+  reportdb:
+    container_name: reportdb
+    image: mongo
+    ports:
+    - published: 27018
+      target: 27017
+    restart: always
+    volumes:
+    - /site:/data/reportdb:rw
+version: '3.4'

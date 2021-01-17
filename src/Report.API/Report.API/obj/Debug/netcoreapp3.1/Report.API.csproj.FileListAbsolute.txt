@@ -8,3 +8,17 @@ E:\Projects\PhoneBook\src\Report.API\Report.API\obj\Debug\netcoreapp3.1\Report.A
 E:\Projects\PhoneBook\src\Report.API\Report.API\obj\Debug\netcoreapp3.1\Report.API.RazorTargetAssemblyInfo.cache
 E:\Projects\PhoneBook\src\Report.API\Report.API\obj\Debug\netcoreapp3.1\staticwebassets\Report.API.StaticWebAssets.Manifest.cache
 E:\Projects\PhoneBook\src\Report.API\Report.API\obj\Debug\netcoreapp3.1\staticwebassets\Report.API.StaticWebAssets.xml
+E:\Projects\PhoneBook\src\Report.API\Report.API\bin\Debug\netcoreapp3.1\DnsClient.dll
+E:\Projects\PhoneBook\src\Report.API\Report.API\bin\Debug\netcoreapp3.1\MongoDB.Bson.dll
+E:\Projects\PhoneBook\src\Report.API\Report.API\bin\Debug\netcoreapp3.1\MongoDB.Driver.dll
+E:\Projects\PhoneBook\src\Report.API\Report.API\bin\Debug\netcoreapp3.1\MongoDB.Driver.Core.dll
+E:\Projects\PhoneBook\src\Report.API\Report.API\bin\Debug\netcoreapp3.1\MongoDB.Libmongocrypt.dll
+E:\Projects\PhoneBook\src\Report.API\Report.API\bin\Debug\netcoreapp3.1\SharpCompress.dll
+E:\Projects\PhoneBook\src\Report.API\Report.API\bin\Debug\netcoreapp3.1\runtimes\win\native\libzstd.dll
+E:\Projects\PhoneBook\src\Report.API\Report.API\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy32.dll
+E:\Projects\PhoneBook\src\Report.API\Report.API\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy64.dll
+E:\Projects\PhoneBook\src\Report.API\Report.API\obj\Debug\netcoreapp3.1\Report.API.csproj.CopyComplete
+E:\Projects\PhoneBook\src\Report.API\Report.API\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+E:\Projects\PhoneBook\src\Report.API\Report.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+E:\Projects\PhoneBook\src\Report.API\Report.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\Projects\PhoneBook\src\Report.API\Report.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll

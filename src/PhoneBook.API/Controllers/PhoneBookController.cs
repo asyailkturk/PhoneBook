@@ -68,7 +68,7 @@ namespace PhoneBook.API.Controllers
         [Route("{id}/[action]")]
         [HttpPut]
         [ProducesResponseType((int)HttpStatusCode.OK)]
-        public async Task<ActionResult> AddContactInfo([FromRoute]string id, [FromBody]ContactInfo contactInfo)
+        public async Task<ActionResult> AddContactInfo(string id, [FromBody]ContactInfo contactInfo)
         {
             await _repository.AddContactInfo(id, contactInfo);
 
