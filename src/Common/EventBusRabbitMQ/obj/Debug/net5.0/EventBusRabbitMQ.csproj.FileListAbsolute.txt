@@ -1,0 +1,12 @@
+E:\Projects\PhoneBook\src\Common\EventBusRabbitMQ\bin\Debug\net5.0\EventBusRabbitMQ.deps.json
+E:\Projects\PhoneBook\src\Common\EventBusRabbitMQ\bin\Debug\net5.0\EventBusRabbitMQ.dll
+E:\Projects\PhoneBook\src\Common\EventBusRabbitMQ\bin\Debug\net5.0\ref\EventBusRabbitMQ.dll
+E:\Projects\PhoneBook\src\Common\EventBusRabbitMQ\bin\Debug\net5.0\EventBusRabbitMQ.pdb
+E:\Projects\PhoneBook\src\Common\EventBusRabbitMQ\obj\Debug\net5.0\EventBusRabbitMQ.csprojAssemblyReference.cache
+E:\Projects\PhoneBook\src\Common\EventBusRabbitMQ\obj\Debug\net5.0\EventBusRabbitMQ.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects\PhoneBook\src\Common\EventBusRabbitMQ\obj\Debug\net5.0\EventBusRabbitMQ.AssemblyInfoInputs.cache
+E:\Projects\PhoneBook\src\Common\EventBusRabbitMQ\obj\Debug\net5.0\EventBusRabbitMQ.AssemblyInfo.cs
+E:\Projects\PhoneBook\src\Common\EventBusRabbitMQ\obj\Debug\net5.0\EventBusRabbitMQ.csproj.CoreCompileInputs.cache
+E:\Projects\PhoneBook\src\Common\EventBusRabbitMQ\obj\Debug\net5.0\EventBusRabbitMQ.dll
+E:\Projects\PhoneBook\src\Common\EventBusRabbitMQ\obj\Debug\net5.0\ref\EventBusRabbitMQ.dll
+E:\Projects\PhoneBook\src\Common\EventBusRabbitMQ\obj\Debug\net5.0\EventBusRabbitMQ.pdb

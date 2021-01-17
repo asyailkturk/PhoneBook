@@ -38,11 +38,43 @@ namespace Report.API.Controllers
             var reportContext =await _repository.CreateReportByLocation(location);
 
             if(reportContext == null)
-            
+            {
                 return NotFound();
+            }
             
-
             return Ok(reportContext);
+        }
+
+        [Route("[action]")]
+        [HttpPost]
+        public async Task<ActionResult<ReportContext>> GetLocationReport([FromBody] string location)
+        {
+
+            //var basket = await _repository.GetBasket(basketCheckout.UserName);
+            //if (basket == null)
+            //{
+            //    return BadRequest();
+            //}
+            //var basketRemoved = await _repository.DeleteBasket(basket.UserName);
+            //if (!basketRemoved)
+            //{
+            //    return BadRequest();
+            //}
+
+            //var eventMessage = _mapper.Map<BasketCheckoutEvent>(basketCheckout);
+            //eventMessage.RequestId = Guid.NewGuid();
+            //eventMessage.TotalPrice = basket.TotalPrice;
+
+            //try
+            //{
+            //    _eventBus.PublishBasketCheckout(EventBusConstants.BasketCheckoutQueue, eventMessage);
+            //}
+            //catch (Exception)
+            //{
+            //    throw;
+            //}
+
+           return Accepted();
         }
     }
 }

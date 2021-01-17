@@ -17,5 +17,6 @@ namespace Report.API.Entities
 
         //Status false for "Prepairing" and true for "Done"
         public bool Status { get; set; }
+
     }
 }
