@@ -7,7 +7,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E8596BF1-E87
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PhoneBook", "PhoneBook", "{2E137A80-4E0A-4F63-80DF-65FD02809EE0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneBook.API", "src\Contact.API\PhoneBook.API.csproj", "{909A2982-770F-4924-9897-D869DC4E7EF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneBook.API", "src\PhoneBook.API\PhoneBook.API.csproj", "{909A2982-770F-4924-9897-D869DC4E7EF7}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{65F15B1A-B396-4B95-8492-8A813BB87A11}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,6 +21,10 @@ Global
 		{909A2982-770F-4924-9897-D869DC4E7EF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{909A2982-770F-4924-9897-D869DC4E7EF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{909A2982-770F-4924-9897-D869DC4E7EF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65F15B1A-B396-4B95-8492-8A813BB87A11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65F15B1A-B396-4B95-8492-8A813BB87A11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65F15B1A-B396-4B95-8492-8A813BB87A11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65F15B1A-B396-4B95-8492-8A813BB87A11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -56,9 +56,6 @@ E:\Projects\PhoneBook\src\Contact.API\bin\Debug\netcoreapp3.1\runtimes\win\nativ
 E:\Projects\PhoneBook\src\Contact.API\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy32.dll
 E:\Projects\PhoneBook\src\Contact.API\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy64.dll
 E:\Projects\PhoneBook\src\Contact.API\obj\Debug\netcoreapp3.1\PhoneBook.API.csprojAssemblyReference.cache
-E:\Projects\PhoneBook\src\Contact.API\obj\Debug\netcoreapp3.1\PhoneBook.API.csproj.CoreCompileInputs.cache
-E:\Projects\PhoneBook\src\Contact.API\obj\Debug\netcoreapp3.1\PhoneBook.API.MvcApplicationPartsAssemblyInfo.cs
-E:\Projects\PhoneBook\src\Contact.API\obj\Debug\netcoreapp3.1\PhoneBook.API.MvcApplicationPartsAssemblyInfo.cache
 E:\Projects\PhoneBook\src\Contact.API\obj\Debug\netcoreapp3.1\PhoneBook.API.AssemblyInfoInputs.cache
 E:\Projects\PhoneBook\src\Contact.API\obj\Debug\netcoreapp3.1\PhoneBook.API.AssemblyInfo.cs
 E:\Projects\PhoneBook\src\Contact.API\obj\Debug\netcoreapp3.1\PhoneBook.API.RazorTargetAssemblyInfo.cache
