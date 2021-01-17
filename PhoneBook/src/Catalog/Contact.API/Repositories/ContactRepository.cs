@@ -75,7 +75,7 @@ namespace PhoneBook.API.Repositories
            
         }
 
-        public async Task DeleteContactInfo(string id, int phoneNumber)
+        public async Task DeleteContactInfo(string id, long phoneNumber)
         {
 
             var updateResult = _context

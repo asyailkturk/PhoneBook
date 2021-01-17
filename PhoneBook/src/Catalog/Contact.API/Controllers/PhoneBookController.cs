@@ -29,14 +29,14 @@ namespace PhoneBook.API.Controllers
             return Ok(contacts);
         }
 
-        [HttpGet("{id:length(24)}", Name = "GetContact")]
+        [HttpGet("{id}", Name = "GetContact")]
         [ProducesResponseType(typeof(Contact), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         public async Task<ActionResult<Contact>> GetContactById(string id)
         {
             var contact = await _repository.GetContactById(id);
 
-            if(contact == null)
+            if (contact == null)
             {
                 return NotFound();
             }
@@ -55,31 +55,31 @@ namespace PhoneBook.API.Controllers
         }
 
 
-        [HttpDelete("{id:lenght(24)}")]
+        [HttpDelete("{id}")]
         [ProducesResponseType(typeof(Contact), (int)HttpStatusCode.OK)]
 
         public async Task<ActionResult> DeleteContact(string id)
         {
-            
+
 
             return Ok(await _repository.Delete(id));
         }
 
-        [Route("{id:lenght(24)}/[action]/{contactInfo}")]
+        [Route("{id}/[action]")]
         [HttpPut]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         public async Task<ActionResult> AddContactInfo([FromRoute]string id, [FromBody]ContactInfo contactInfo)
         {
-            await _repository.AddContactInfo(id,contactInfo);
+            await _repository.AddContactInfo(id, contactInfo);
 
             return Ok();
         }
 
 
-        [Route("{id:lenght(24)}/[action]/{phoneNumber}")]
+        [Route("{id}/[action]/{phoneNumber}")]
         [HttpPut]
         [ProducesResponseType((int)HttpStatusCode.OK)]
-        public async Task<ActionResult> DeleteContactInfo([FromRoute]string id, [FromBody]int phoneNumber)
+        public async Task<ActionResult> DeleteContactInfo(string id, long phoneNumber)
         {
             await _repository.DeleteContactInfo(id, phoneNumber);
 

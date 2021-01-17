@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.OpenApi.Models;
 using PhoneBook.API.Data;
 using PhoneBook.API.Data.Interfaces;
 using PhoneBook.API.Repositories;
@@ -30,14 +31,22 @@ namespace PhoneBook.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
             services.AddControllers();
 
             services.Configure<PhoneBookDatabaseSettings>(Configuration.GetSection(nameof(PhoneBookDatabaseSettings)));
 
-            services.AddSingleton<IPhoneBookDatabaseSettings>(sp => sp.GetRequiredService<IOptions<PhoneBookDatabaseSettings>>().Value);
+            services.AddSingleton<IPhoneBookDatabaseSettings>(sp =>
+                sp.GetRequiredService<IOptions<PhoneBookDatabaseSettings>>().Value);
 
             services.AddTransient<IPhoneBookContext, PhoneBookContext>();
+
             services.AddTransient<IContactRepository, ContactRepository>();
+
+            services.AddSwaggerGen(c =>
+           {
+               c.SwaggerDoc("v1", new OpenApiInfo { Title = "PhoneBook API", Version = "v1" });
+           });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,6 +65,13 @@ namespace PhoneBook.API
             {
                 endpoints.MapControllers();
             });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+           {
+               c.SwaggerEndpoint("/swagger/v1/swagger.json", "PhoneBook API V1");
+           
+           });
         }
     }
 }

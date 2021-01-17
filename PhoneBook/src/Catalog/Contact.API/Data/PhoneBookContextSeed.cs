@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using Microsoft.AspNetCore.Components.Routing;
+using MongoDB.Driver;
 using PhoneBook.API.Entities;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,8 @@ namespace PhoneBook.API.Data
                 {
                     FirstName = "Asya",
                     LastName = "İlktürk",
-                    Company ="Company",
+                    Company ="Company"
+                   
                     
                 },
                 new Contact()

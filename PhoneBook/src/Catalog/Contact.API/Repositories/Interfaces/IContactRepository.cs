@@ -18,7 +18,7 @@ namespace PhoneBook.API.Repositories.Interfaces
         Task AddContactInfo(string id, ContactInfo contactInfo);
 
         //Rehberdeki kişiden iletişim bilgisi kaldırma
-        Task DeleteContactInfo(string id, int PhoneNumber);
+        Task DeleteContactInfo(string id, long PhoneNumber);
 
         //Rehberdeki kişilerin listelenmesi
         Task<IEnumerable<Contact>> GetContacts();

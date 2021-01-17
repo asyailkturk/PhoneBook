@@ -9,7 +9,7 @@ namespace PhoneBook.API.Entities
 {
     public class ContactInfo
     {
-        public int PhoneNumber { get; set; }
+        public long PhoneNumber { get; set; }
 
         public string Email { get; set; }
 
