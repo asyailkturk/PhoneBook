@@ -1,0 +1,67 @@
+{
+  "Routes": [
+    //PhoneBook API
+    {
+      "DownstreamPathTemplate": "/api/v1/PhoneBook",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "phonebookapi",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/PhoneBook",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/PhoneBook/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "phonebookapi",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/PhoneBook/{id}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/PhoneBook/{id}/AddContactInfo",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "phonebookapi",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/PhoneBook/{id}/AddContactInfo",
+      "UpstreamHttpMethod": [ "PUT" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/PhoneBook/{id}/DeleteContactInfo/{phoneNumber}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "phonebookapi",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/PhoneBook/{id}/DeleteContactInfo/{phoneNumber}",
+      "UpstreamHttpMethod": [ "PUT" ]
+    },
+    //Report API
+    {
+      "DownstreamPathTemplate": "/api/v1/Report",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "reportapi",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/Report",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+    }   
+    
+  ]
+}

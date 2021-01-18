@@ -1,0 +1,9 @@
+E:\Projects\PhoneBook\PhoneBook\src\Catalog\Contact.API\bin\Debug\netcoreapp3.1\appsettings.Development.json
+E:\Projects\PhoneBook\PhoneBook\src\Catalog\Contact.API\bin\Debug\netcoreapp3.1\appsettings.json
+E:\Projects\PhoneBook\PhoneBook\src\Catalog\Contact.API\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+E:\Projects\PhoneBook\PhoneBook\src\Catalog\Contact.API\bin\Debug\netcoreapp3.1\Contact.API.exe
+E:\Projects\PhoneBook\PhoneBook\src\Catalog\Contact.API\obj\Debug\netcoreapp3.1\Contact.API.AssemblyInfoInputs.cache
+E:\Projects\PhoneBook\PhoneBook\src\Catalog\Contact.API\obj\Debug\netcoreapp3.1\Contact.API.AssemblyInfo.cs
+E:\Projects\PhoneBook\PhoneBook\src\Catalog\Contact.API\obj\Debug\netcoreapp3.1\Contact.API.RazorTargetAssemblyInfo.cache
+E:\Projects\PhoneBook\PhoneBook\src\Catalog\Contact.API\obj\Debug\netcoreapp3.1\staticwebassets\Contact.API.StaticWebAssets.Manifest.cache
+E:\Projects\PhoneBook\PhoneBook\src\Catalog\Contact.API\obj\Debug\netcoreapp3.1\staticwebassets\Contact.API.StaticWebAssets.xml
