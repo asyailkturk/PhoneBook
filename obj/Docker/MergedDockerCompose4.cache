@@ -1,0 +1,135 @@
+services:
+  ocelotapigateway:
+    build:
+      context: E:\Projects\PhoneBook
+      dockerfile: src/APIGateway/OcelotAPIGateway/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: OcelotAPIGateway
+      target: base
+    container_name: OcelotAPIGateway
+    depends_on:
+      phonebook.api:
+        condition: service_started
+      report.api:
+        condition: service_started
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: ''
+    image: ocelotapigateway:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/net5.0/OcelotAPIGateway.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - published: 7000
+      target: 80
+    tty: true
+    volumes:
+    - E:\Projects\PhoneBook\src\APIGateway\OcelotAPIGateway:/app:rw
+    - C:\Users\Asya\vsdbg\vs2017u5:/remote_debugger:rw
+    - C:\Users\Asya\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - /.aspnet/https:/root/.aspnet/https/:rw
+    - C:\Users\Asya\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Users\Asya\.nuget\packages:/root/.nuget/packages:ro
+    - E:\Projects\PhoneBook:/src:rw
+  phonebook.api:
+    build:
+      context: E:\Projects\PhoneBook
+      dockerfile: src/PhoneBook.API/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: PhoneBook.API
+      target: base
+    container_name: PhoneBook.API
+    depends_on:
+      phonebookdb:
+        condition: service_started
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: ''
+      PhoneBookDatabaseSettings:ConnectionString: mongodb://phonebookdb:27017
+    image: phonebookapi:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/net5.0/PhoneBook.API.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - published: 8000
+      target: 80
+    tty: true
+    volumes:
+    - E:\Projects\PhoneBook\src\PhoneBook.API:/app:rw
+    - C:\Users\Asya\vsdbg\vs2017u5:/remote_debugger:rw
+    - C:\Users\Asya\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - /.aspnet/https:/root/.aspnet/https/:rw
+    - C:\Users\Asya\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Users\Asya\.nuget\packages:/root/.nuget/packages:ro
+    - E:\Projects\PhoneBook:/src:rw
+  phonebookdb:
+    container_name: phonebookdb
+    image: mongo
+    ports:
+    - published: 27017
+      target: 27017
+    restart: always
+    volumes:
+    - /site:/data/phonebookdb:rw
+  report.api:
+    build:
+      context: E:\Projects\PhoneBook
+      dockerfile: src/Report.API/Report.API/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: Report.API
+      target: base
+    container_name: Report.API
+    depends_on:
+      reportdb:
+        condition: service_started
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: ''
+      ReportDatabaseSettings:ConnectionString: mongodb://reportdb:27018
+    image: reportapi:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/net5.0/Report.API.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - published: 8001
+      target: 80
+    tty: true
+    volumes:
+    - E:\Projects\PhoneBook\src\Report.API\Report.API:/app:rw
+    - C:\Users\Asya\vsdbg\vs2017u5:/remote_debugger:rw
+    - C:\Users\Asya\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - /.aspnet/https:/root/.aspnet/https/:rw
+    - C:\Users\Asya\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Users\Asya\.nuget\packages:/root/.nuget/packages:ro
+    - E:\Projects\PhoneBook:/src:rw
+  reportdb:
+    container_name: reportdb
+    image: mongo
+    ports:
+    - published: 27018
+      target: 27017
+    restart: always
+    volumes:
+    - /site:/data/reportdb:rw
+version: '3.4'

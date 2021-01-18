@@ -1,4 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using EventBusRabbitMQ.Common;
+using EventBusRabbitMQ.Events;
+using EventBusRabbitMQ.Producer;
+using Microsoft.AspNetCore.Mvc;
+using MongoDB.Bson;
+using PhoneBook.API.Repositories.Interfaces;
 using Report.API.Entities;
 using Report.API.Repositories.Interfaces;
 using System;
@@ -14,10 +20,16 @@ namespace Report.API.Controllers
     public class ReportController: ControllerBase
     {
         private readonly IReportRepository _repository;
+        private readonly IMapper _mapper;
+        private readonly EventBusRabbitMQProducer _eventBus;
+        private readonly IContactRepository _contactRepository;
 
-        public ReportController(IReportRepository repository)
+        public ReportController(IReportRepository repository, IMapper mapper, EventBusRabbitMQProducer eventBus, IContactRepository contactRepository)
         {
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
+            _eventBus = eventBus ?? throw new ArgumentNullException(nameof(eventBus));
+            _contactRepository = contactRepository ?? throw new ArgumentNullException(nameof(contactRepository));
         }
 
         [HttpGet]
@@ -29,52 +41,55 @@ namespace Report.API.Controllers
             return Ok(reports);
         }
 
-        //[Route("[action]/{location}")]
-        //[HttpPut]
-        //[ProducesResponseType(typeof(ReportContext),(int)HttpStatusCode.OK)]
-        //[ProducesResponseType((int)HttpStatusCode.NotFound)]
-        //public async Task<ActionResult<ReportContext>> CreateReportByLocation([FromBody]string location)
-        //{
-        //    var reportContext =await _repository.CreateReportByLocation(location);
-
-        //    if(reportContext == null)
-        //    {
-        //        return NotFound();
-        //    }
-            
-        //    return Ok(reportContext);
-        //}
-
-        //[Route("[action]")]
+        
         [HttpPost]
-        public async Task<ActionResult<ReportContext>> GetLocationReport([FromBody] string location)
+        public async Task<IActionResult> CreateLocationReport([FromBody] string location)
         {
+            var allContacts = await _contactRepository.GetContacts();
 
-            //var basket = await _repository.GetBasket(basketCheckout.UserName);
-            //if (basket == null)
-            //{
-            //    return BadRequest();
-            //}
-            //var basketRemoved = await _repository.DeleteBasket(basket.UserName);
-            //if (!basketRemoved)
-            //{
-            //    return BadRequest();
-            //}
+            if (allContacts == null)
+            {
+                return BadRequest();
+            }
 
-            //var eventMessage = _mapper.Map<BasketCheckoutEvent>(basketCheckout);
-            //eventMessage.RequestId = Guid.NewGuid();
-            //eventMessage.TotalPrice = basket.TotalPrice;
+            var contactListByLocation = allContacts.Where(x => x.ContactInfo.Select(y => y.Location == location).Any()).ToList();
 
-            //try
-            //{
-            //    _eventBus.PublishBasketCheckout(EventBusConstants.BasketCheckoutQueue, eventMessage);
-            //}
-            //catch (Exception)
-            //{
-            //    throw;
-            //}
+            if (contactListByLocation == null)
+            {
+                return BadRequest();
+            }
 
-           return Accepted();
+            var reportContext = new ReportContext();
+
+            reportContext.Location = location;
+
+            reportContext.ContactCount=contactListByLocation.GroupBy(y => y.Id).Count();
+
+            reportContext.PhoneNumberCount = contactListByLocation.Select(x => x.ContactInfo.GroupBy(y => y.PhoneNumber)).Count();
+
+            Reports report = new Reports();
+            report.ReportContext = reportContext;
+           
+            var eventMessage = _mapper.Map<ReportsEvent>(report);
+            eventMessage.RequestId = Guid.NewGuid();
+            eventMessage.Status = true;
+            eventMessage.CreationDate = DateTime.Now;
+            eventMessage.ReportId = new ObjectId().ToString();
+
+            await _repository.InsertReport(report);
+
+
+            try
+            {
+                _eventBus.PublishReports(EventBusConstants.ReportQueue, eventMessage);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return Accepted();
+           
         }
     }
 }

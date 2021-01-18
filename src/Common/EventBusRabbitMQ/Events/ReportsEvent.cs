@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace EventBusRabbitMQ.Events
 {
@@ -15,6 +14,5 @@ namespace EventBusRabbitMQ.Events
 
         public bool Status { get; set; }
 
-        
     }
 }

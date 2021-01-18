@@ -16,7 +16,7 @@ namespace EventBusRabbitMQ.Producer
             _connection = connection ?? throw new ArgumentNullException(nameof(connection));
         }
 
-        public void PublishReports(string queueName, ReportsEvent publishModel )
+        public void PublishReports(string queueName, ReportsEvent publishModel)
         {
             using (var channel = _connection.CreateModel())
             {
@@ -39,7 +39,6 @@ namespace EventBusRabbitMQ.Producer
                 };
                 channel.ConfirmSelect();
             }
-
         }
     }
 }

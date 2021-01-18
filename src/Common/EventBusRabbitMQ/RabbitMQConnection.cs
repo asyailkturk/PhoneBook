@@ -16,7 +16,7 @@ namespace EventBusRabbitMQ
         public RabbitMQConnection(IConnectionFactory connectionFactory)
         {
             _connectionFactory = connectionFactory ?? throw new ArgumentNullException(nameof(connectionFactory));
-            if(!IsConnected)
+            if (!IsConnected)
             {
                 TryConnect();
             }
@@ -30,35 +30,6 @@ namespace EventBusRabbitMQ
             }
         }
 
-        public IModel CreateModel()
-        {
-            if (!IsConnected)
-            {
-                throw new InvalidOperationException("No Rabbit Connection!");
-
-            }
-
-            return _connection.CreateModel();
-        }
-
-        public void Dispose()
-        {
-            if (_disposed)
-            {
-                return;
-
-            }
-
-            try
-            {
-                _connection.Dispose();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
         public bool TryConnect()
         {
             try
@@ -69,8 +40,8 @@ namespace EventBusRabbitMQ
             {
                 Thread.Sleep(2000);
                 _connection = _connectionFactory.CreateConnection();
-                
-            };
+            }
+
             if (IsConnected)
             {
                 return true;
@@ -78,6 +49,34 @@ namespace EventBusRabbitMQ
             else
             {
                 return false;
+            }
+        }
+
+
+        public IModel CreateModel()
+        {
+            if (!IsConnected)
+            {
+                throw new InvalidOperationException("No rabbit connection");
+            }
+
+            return _connection.CreateModel();
+        }
+
+        public void Dispose()
+        {
+            if (_disposed)
+            {
+                return;
+            }
+
+            try
+            {
+                _connection.Dispose();
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
     }

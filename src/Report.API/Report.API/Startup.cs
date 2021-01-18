@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using AutoMapper;
 using EventBusRabbitMQ;
 using EventBusRabbitMQ.Producer;
 using Microsoft.AspNetCore.Builder;
@@ -44,6 +45,8 @@ namespace Report.API
             services.AddTransient<IReportContext, ReportContext>();
 
             services.AddTransient<IReportRepository, ReportRepository>();
+
+            services.AddAutoMapper(typeof(Startup));
 
             services.AddSwaggerGen(c =>
             {

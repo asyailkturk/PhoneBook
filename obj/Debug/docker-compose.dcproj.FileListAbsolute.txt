@@ -23,3 +23,16 @@ E:\Projects\PhoneBook\bin\Debug\EventBusRabbitMQ.pdb
 E:\Projects\PhoneBook\obj\Debug\docker-compose.dcprojAssemblyReference.cache
 E:\Projects\PhoneBook\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 E:\Projects\PhoneBook\obj\Debug\docker-compose.dcproj.CopyComplete
+E:\Projects\PhoneBook\bin\Debug\ocelot.json
+E:\Projects\PhoneBook\bin\Debug\OcelotAPIGateway.exe
+E:\Projects\PhoneBook\bin\Debug\OcelotAPIGateway.dll
+E:\Projects\PhoneBook\bin\Debug\AutoMapper.dll
+E:\Projects\PhoneBook\bin\Debug\Ocelot.dll
+E:\Projects\PhoneBook\bin\Debug\Microsoft.Extensions.DiagnosticAdapter.dll
+E:\Projects\PhoneBook\bin\Debug\FluentValidation.dll
+E:\Projects\PhoneBook\bin\Debug\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+E:\Projects\PhoneBook\bin\Debug\Microsoft.AspNetCore.MiddlewareAnalysis.dll
+E:\Projects\PhoneBook\bin\Debug\Microsoft.AspNetCore.JsonPatch.dll
+E:\Projects\PhoneBook\bin\Debug\Newtonsoft.Json.Bson.dll
+E:\Projects\PhoneBook\bin\Debug\OcelotAPIGateway.pdb
+E:\Projects\PhoneBook\bin\Debug\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

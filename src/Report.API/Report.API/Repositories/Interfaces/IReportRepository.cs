@@ -12,10 +12,7 @@ namespace Report.API.Repositories.Interfaces
         //Oluşturulmuş raporların listelenmesi
         Task<IEnumerable<Reports>> GetReports();
 
-        //Location bilgisine göre rapor oluşturma
-        Task<ReportContext> CreateReportByLocation(string Location);
-
-   
+        Task InsertReport(Reports report);
 
     }
 }

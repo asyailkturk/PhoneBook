@@ -19,10 +19,6 @@ namespace Report.API.Repositories
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        public  Task<ReportContext> CreateReportByLocation(string Location)
-        {
-            throw new Exception();
-        }
 
         public async Task<IEnumerable<Reports>> GetReports()
         {
@@ -31,5 +27,11 @@ namespace Report.API.Repositories
                             .Find(p => true)
                             .ToListAsync();
         }
+
+        public async Task InsertReport(Reports report)
+        {
+            await _context.PhoneBookReports.InsertOneAsync(report);
+        }
+
     }
 }

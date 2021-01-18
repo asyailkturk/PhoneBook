@@ -21,3 +21,14 @@ E:\Projects\PhoneBook\src\APIGateway\OcelotAPIGateway\obj\Debug\net5.0\OcelotAPI
 E:\Projects\PhoneBook\src\APIGateway\OcelotAPIGateway\obj\Debug\net5.0\ref\OcelotAPIGateway.dll
 E:\Projects\PhoneBook\src\APIGateway\OcelotAPIGateway\obj\Debug\net5.0\OcelotAPIGateway.pdb
 E:\Projects\PhoneBook\src\APIGateway\OcelotAPIGateway\obj\Debug\net5.0\OcelotAPIGateway.genruntimeconfig.cache
+E:\Projects\PhoneBook\src\APIGateway\OcelotAPIGateway\bin\Debug\net5.0\ocelot.json
+E:\Projects\PhoneBook\src\APIGateway\OcelotAPIGateway\bin\Debug\net5.0\FluentValidation.dll
+E:\Projects\PhoneBook\src\APIGateway\OcelotAPIGateway\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+E:\Projects\PhoneBook\src\APIGateway\OcelotAPIGateway\bin\Debug\net5.0\Microsoft.AspNetCore.MiddlewareAnalysis.dll
+E:\Projects\PhoneBook\src\APIGateway\OcelotAPIGateway\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+E:\Projects\PhoneBook\src\APIGateway\OcelotAPIGateway\bin\Debug\net5.0\Microsoft.Extensions.DiagnosticAdapter.dll
+E:\Projects\PhoneBook\src\APIGateway\OcelotAPIGateway\bin\Debug\net5.0\Newtonsoft.Json.dll
+E:\Projects\PhoneBook\src\APIGateway\OcelotAPIGateway\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+E:\Projects\PhoneBook\src\APIGateway\OcelotAPIGateway\bin\Debug\net5.0\Ocelot.dll
+E:\Projects\PhoneBook\src\APIGateway\OcelotAPIGateway\obj\Debug\net5.0\OcelotAPIGateway.MvcApplicationPartsAssemblyInfo.cs
+E:\Projects\PhoneBook\src\APIGateway\OcelotAPIGateway\obj\Debug\net5.0\OcelotAPIGateway.csproj.CopyComplete

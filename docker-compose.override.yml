@@ -15,6 +15,12 @@ services:
             - ${WEBAPP_STORAGE_HOME}/site:/data/reportdb
         ports:
             - "27018:27017"
+    rabbitmq:
+        container_name: rabbitmq
+        restart: always
+        ports:
+            - "5672:5672"
+            - "15672:15672"
     phonebook.api:
         environment:
             - ASPNETCORE_ENVIRONMENT=Development
